@@ -1,0 +1,40 @@
+{
+  "name": "novikova",
+  "version": "0.1.0",
+  "description": "Rollup based Website",
+  "main": "src/javascript/main.js",
+  "scripts": {
+    "pug": "pug src/pug/ --out dist/ --pretty",
+    "pug:watch": "pug --out dist/ --pretty --watch src/pug/",
+    "serve": "http-server --silent -c 1 -o",
+    "js": "rollup -c --sourcemap",
+    "js:watch": "rollup -c -w --sourcemap",
+    "lint": "eslint --format codeframe --ext .js,.jsx src/javascript || exit 0",
+    "less": "lessc src/less/styles.less dist/css/styles.css --source-map --clean-css='--s1 --advanced'",
+    "less:watch": "./node_modules/.bin/watch --interval=0.3 'echo Less files compiling && lessc src/less/styles.less dist/css/styles.css --source-map' src/less",
+    "watch": "concurrently \"npm run less:watch\" \"npm run js:watch\" \"npm run pug:watch\"",
+    "build": "npm run pug && npm run less && npm run js"
+  },
+  "author": "Anna Novikova",
+  "license": "ISC",
+  "devDependencies": {
+    "less": "^2.7.2",
+    "less-plugin-clean-css": "^1.5.1",
+    "watch": "^1.0.2",
+    "rollup": "^0.41.6",
+    "rollup-watch": "^3.2.2",
+    "eslint": "^4.1.1",
+    "rollup-plugin-butternut": "^0.1.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-babel": "^2.7.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "eslint-plugin-react": "^7.1.0",
+    "preact": "^8.1.0",
+    "http-server": "^0.10.0",
+    "concurrently": "^3.4.0",
+    "pug": "^2.0.0-rc.1",
+    "pug-cli": "^1.0.0-alpha6"
+  },
+  "dependencies": {
+  }
+}

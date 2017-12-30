@@ -1,0 +1,40 @@
+@import "ungrid";
+
+@white-cloud-color: #c5e3ff;
+@info-color: #4ef6c1;
+@pink-color: #ff00d8;
+
+BODY {
+  color: @white-cloud-color;
+  background-color: #6663e0;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 64px;
+}
+
+h1 {
+  font-size: 1.0em;
+}
+
+a {
+  color: @white-cloud-color;
+  &:hover { color: @pink-color }
+
+  font-weight: 800;
+}
+
+span {
+  font-size: 0.5em;
+
+  &.mail {
+    margin: 0 12px;
+
+    font-weight: bolder;
+    color: @info-color;
+  }
+}
+
+.phone-info {
+  margin-top: 1em;
+  background-color: rgba(0,30,150,0.17);
+}
