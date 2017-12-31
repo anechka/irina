@@ -9,7 +9,11 @@ BODY {
   background-color: #6663e0;
 
   font-family: "Montserrat", sans-serif;
-  font-size: 64px;
+  font-size: 48px;
+
+  @media (min-width: 320px) {
+    font-size: 64px;
+  }
 }
 
 h1 {
@@ -31,10 +35,20 @@ span {
 
     font-weight: bolder;
     color: @info-color;
+
+    @media (max-width: 480px) {
+      display: block;
+    }
   }
+}
+
+.text-center {
+  text-align: center;
 }
 
 .phone-info {
   margin-top: 1em;
   background-color: rgba(0,30,150,0.17);
+
+  padding-bottom: 1em;
 }
